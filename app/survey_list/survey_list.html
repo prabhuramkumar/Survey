@@ -2,7 +2,7 @@
 	<li ng-repeat="list in SurveyListCtrl.surveyList track by $index">
 		<button ng-click="SurveyListCtrl.goToSurveyDetails(list)" class="survey btn-primary">
 			<h3 class="survey__title">{{::list.name}}</h3>
-			<p class="survey__rate">Response Rate: {{::list.response_rate | precision}}%</p>
+			<p class="survey__rate">Response Rate: {{::list.response_rate | percentagePrecision : 4}}%</p>
 			<p class="survey__participants">Total Participants: {{::list.participant_count}}</p>
 		</button>
 	</li>

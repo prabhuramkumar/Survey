@@ -1,5 +1,9 @@
 angular.module('Survey').filter('precision', function(){
-  return function(rate){
-    return rate.toPrecision(4)*100;
+  return function(value, precisionPoint){
+    return value.toPrecision(precisionPoint);
+  }
+}).filter('percentagePrecision', function(){
+  return function(rate, precisionPoint){
+    return rate.toPrecision(precisionPoint)*100;
   }
 });
