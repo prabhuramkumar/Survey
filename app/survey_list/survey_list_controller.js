@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('surveyList')
-.controller('SurveyListCtrl', ['surveyListService', '$location', 
-	function(surveyListService, $location) {
+.controller('SurveyListCtrl', ['surveyListService', '$state',
+	function(surveyListService, $state) {
 		var controller = this;
+		var url = '/survey_results/index.json';
 		controller.dataAvilable = false;
 		controller.error = '';
 
-		surveyListService.getSurveyList().then(function(data){
+		surveyListService.getSurveyList(url).then(function(data){
 			controller.dataAvilable = true;
 			controller.surveyList = data.survey_results;
 		}).catch(function(error){
@@ -15,7 +16,7 @@ angular.module('surveyList')
 			controller.error = error;
 		});
 
-		controller.goToSurveyDetails = function(id) {
-			$location.path('/details/'+id);
+		controller.goToSurveyDetails = function(list) {
+			$state.go('detailsPage', {params: {surveyList: list} });
 		}
 	}]);

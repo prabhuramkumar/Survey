@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('surveyDetails')
-.controller('SurveyDetailsCtrl', ['surveyDetailsService', '$routeParams',
-	function(surveyDetailsService, $routeParams) {
+.controller('SurveyDetailsCtrl', ['surveyDetailsService', '$stateParams',
+	function(surveyDetailsService, $stateParams) {
 		var controller = this;
+		var url = $stateParams.params.surveyList.url;
 		controller.dataAvilable = false;
 		controller.error = false;
-		surveyDetailsService.getSurveyDetails().then(function(data){
+		
+		surveyDetailsService.getSurveyDetails(url).then(function(data){
 			controller.surveyDetails = data.survey_result_detail;
 			controller.surveyDetails.themes.forEach(function(theme) {
 				addAverageRating(theme.questions);

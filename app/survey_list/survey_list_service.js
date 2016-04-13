@@ -1,8 +1,8 @@
 angular.module('surveyList', []).service('surveyListService', ['$http', function($http){
-    var url = '../../survey_results/index.json';
+    var basePath = '../../';
 
-    function getSurveyList(){
-        return $http.get(url).then(function(data){
+    function getSurveyList(url){
+        return $http.get(basePath+url).then(function(data){
             return data.data;
         });
     }
