@@ -1,0 +1,7 @@
+
+<ol class="survey-questions">
+	<li ng-repeat="question in questions track by $index" class="question">
+		<h3 class="question__title">{{::question.description}}</h3>
+		<p class="question__rating">Average Rating: <span class="question__rating--number">{{::question.average_rating}}<span></p>
+	</li>
+</ol>

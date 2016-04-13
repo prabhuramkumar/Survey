@@ -1,5 +1,5 @@
 angular.module('surveyList', []).service('surveyListService', ['$http', function($http){
-    var url = '../../data/index.json';
+    var url = '../../survey_results/index.json';
 
     function getSurveyList(){
         return $http.get(url).then(function(data){

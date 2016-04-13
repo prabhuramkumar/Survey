@@ -1,0 +1,71 @@
+.survey-overview {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background-color: #337ab7;
+	border-radius: 5px;
+	color: #fff;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.survey-overview__info {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.survey-overview__info p {
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.survey-overview__title {
+    border-bottom: 1px solid;
+    font-size: 30px;
+    text-align: left;
+}
+
+.survey-overview__number {
+	font-size: 40px;
+	text-align: left;
+}
+
+.survey-details__theme {
+	margin-bottom: 30px;
+}
+
+.survey-details__theme__title {
+	font-size: 30px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+}
+
+.survey-questions {
+	padding: 15px 20px;
+}
+
+
+/******** question *********/
+
+.question {
+	margin-bottom: 15px;
+	list-style-type: decimal;
+}
+
+.question__title {
+	font-size: 18px;
+}
+
+.question__rating {
+	margin-top: 5px;
+	font-size: 12px;
+	color: #cccccc;
+}
+
+.question__rating--number {
+	color: orange;
+	font-size: 14px;
+}

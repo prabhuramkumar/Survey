@@ -10,13 +10,14 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="app/reset.css">
-  <link rel="stylesheet" href="app/app.css">
+  <link rel="stylesheet" href="app/styles/reset.css">
+  <link rel="stylesheet" href="app/styles/survey_list.css">
+  <link rel="stylesheet" href="app/styles/survey_details.css">
+  <link rel="stylesheet" href="app/styles/app.css">
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,600' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
-  <script src="bower_components/lodash/lodash.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
@@ -26,7 +27,15 @@
   <script src="app/survey_list/survey_list_controller.js"></script>
   <script src="app/survey_list/survey_list_directive.js"></script>
 
+  <script src="app/survey_details/survey_details_service.js"></script>
+  <script src="app/survey_details/survey_details_controller.js"></script>
+  <script src="app/survey_details/survey_questions_directive.js"></script>
+  <script src="app/survey_details/survey_details_directive.js"></script>
+
   <script src="app/app.js"></script>
+  <script src="app/router.js"></script>
+  <script src="app/filter.js"></script>
+
 </head>
 <body ng-app="Survey">
 

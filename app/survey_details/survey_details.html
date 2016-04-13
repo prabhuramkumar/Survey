@@ -1,6 +1,21 @@
-
-<h2 class="survey_details__title"> Survey details</h2>
-
-<div>
-	
+<div class="survey-overview">
+	<h1 class="survey-overview__title">{{SurveyDetailsCtrl.surveyDetails.name}}</h1>
+	<div class="survey-overview__info">
+		<p class="survey-overview__participants">
+			<span>Total no of participants</span>
+			<span class="survey-overview__number">{{SurveyDetailsCtrl.surveyDetails.participant_count}}</span>
+		</p>
+		<p class="survey-overview__submitted">
+			<span>Total no of submissions</span>
+			<span class="survey-overview__number">{{SurveyDetailsCtrl.surveyDetails.submitted_response_count}}</span>
+		</p>
+		<p class="survey-overview__response">
+			<span>Response Rate</span>
+			<span class="survey-overview__number">{{SurveyDetailsCtrl.surveyDetails.response_rate | precision}}%</span>
+		</p>
+	</div>
+</div>
+<div ng-repeat="theme in SurveyDetailsCtrl.surveyDetails.themes track by $index" class="survey-details__theme">
+	<h2 class="survey-details__theme__title">{{theme.name}}</h2>
+	<survey-questions questions="theme.questions"></survey-questions>
 </div>

@@ -1,0 +1,8 @@
+<h2 class="survey-details__title"> Survey Details</h2>
+<survey-details ng-if="SurveyDetailsCtrl.dataAvilable && !SurveyDetailsCtrl.error"></survey-detais>
+<div ng-if="!SurveyDetailsCtrl.dataAvilable && !SurveyDetailsCtrl.error">
+	<p>Loading...</p>
+</div>
+<div ng-if="SurveyDetailsCtrl.error">
+	<p>Trouble loading Data. Try Again Later.</p>
+</div>
