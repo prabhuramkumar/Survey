@@ -1,1 +1,9 @@
-<h2 class="survey_list--title"> Survey List</h2>
+<ul class="survey-list">
+	<li ng-repeat="item in list track by $index">
+		<button ng-click="goToSurveyDetails(list.url)" class="survey btn-primary">
+			<h3 class="survey__title">{{::item.name}}</h3>
+			<p class="survey__rate">Response Rate: {{::surveyRate(item.response_rate)}}%</p>
+			<p class="survey__participants">Total Participants: {{::item.participant_count}}</p>
+		</button>
+	</li>
+</ul

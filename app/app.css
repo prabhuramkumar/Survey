@@ -21,6 +21,7 @@ p {
 
 .main__container {
   display: flex;
+  flex-direction: column;
   min-height: 400px;
   height: calc(100vh - 140px);
   align-items: center;
@@ -52,8 +53,41 @@ p {
   letter-spacing: 3px;
 }
 
-.survey_list--title,
-.survey_details--title {
+.survey_list__title,
+.survey_details__title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+survey-list {
+  width: 100%
+}
+
+.survey-list {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.survey-list li{
+  flex: 1;
+  margin: 20px;
+}
+
+.survey-list p {
+  margin: 5px;
+}
+.survey-list .survey {
+  padding: 40px 25px;
+  box-shadow: none;
+  border: 0;
+  border-radius: 3px;
+  text-align: left;
+  width: 100%;
+}
+
+.survey-list .survey__title {
   font-size: 30px;
 }
 

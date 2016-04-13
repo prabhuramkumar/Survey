@@ -1,0 +1,8 @@
+<h2 class="survey_list__title"> Survey List</h2>
+<survey-list list="SurveyListCtrl.surveyList"  ng-if="SurveyListCtrl.dataAvilable && !SurveyListCtrl.error"></survey-list>
+<div ng-if="!SurveyListCtrl.dataAvilable && !SurveyListCtrl.error">
+	<p>Loading...</p>
+</div>
+<div ng-if="SurveyListCtrl.error">
+	<p>Trouble loading Data. Try Again Later.</p>
+</div>
