@@ -14,6 +14,7 @@ angular.module('surveyList')
 		}).catch(function(error){
 			controller.dataAvilable = false;
 			controller.error = error;
+			controller.errorMsg = "Trouble loading Data. Try Again Later.";
 		});
 
 		controller.goToSurveyDetails = function(list) {

@@ -17,6 +17,7 @@ angular.module('surveyDetails')
 		}).catch(function(error){
 			controller.dataAvilable = false;
 			controller.error = true;
+			controller.errorMsg = "Trouble loading Details, Try again.";
 		}).finally(function() {
 			controller.dataAvilable = true;
 		});

@@ -6,3 +6,5 @@ angular.module('surveyDetails').directive('surveyDetails', function() {
 		templateUrl: 'app/survey_details/survey_details.html'
 	}
 });
+
+
