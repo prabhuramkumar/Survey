@@ -5,11 +5,10 @@ angular.module('Survey').config(['$stateProvider', function($stateProvider) {
     controller: 'SurveyListCtrl',
     controllerAs: 'SurveyListCtrl'
   }).state('detailsPage', {
-    url: '/details/',
+    url: '/details/:id',
     templateUrl: 'app/survey_details/survey_details_view.html',
     controller: 'SurveyDetailsCtrl',
-    controllerAs: 'SurveyDetailsCtrl',
-    params: {params: null}
+    controllerAs: 'SurveyDetailsCtrl'
   });
 
 }]);

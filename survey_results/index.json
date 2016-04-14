@@ -1,6 +1,7 @@
 {
   "survey_results": [
     {
+      "id": "1",
       "name": "Simple Survey",
       "url": "/survey_results/1.json",
       "participant_count": 6,
@@ -8,6 +9,7 @@
       "submitted_response_count": 5
     },
     {
+      "id": "2",
       "name": "Acme Engagement Survey",
       "url": "/survey_results/2.json",
       "participant_count": 271,

@@ -1,8 +1,10 @@
 <h2 class="survey-list__title"> Survey List</h2>
-<survey-list ng-if="SurveyListCtrl.dataAvilable && !SurveyListCtrl.error"></survey-list>
-<div ng-if="!SurveyListCtrl.dataAvilable && !SurveyListCtrl.error">
+<div ng-if="!SurveyListCtrl.state.isLoading && !SurveyListCtrl.error" class="survey-list__wrapper">
+	<survey-list></survey-list>
+</div>
+<div ng-if="SurveyListCtrl.state.isLoading">
 	<loader></loader>
 </div>
-<div ng-if="SurveyListCtrl.error">
-	<page-error message="SurveyListCtrl.errorMsg"></page-error>
+<div ng-if="SurveyListCtrl.state.error">
+	<page-error message="SurveyListCtrl.state.errorMsg"></page-error>
 </div>

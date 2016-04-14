@@ -8,6 +8,12 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
+
+/**** Utilities *****/
+.full-width {
+  width: 100%;
+}
+
 /******* App *********/
 .main {
   border: 1px solid #666;

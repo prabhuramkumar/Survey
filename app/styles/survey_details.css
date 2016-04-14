@@ -33,6 +33,10 @@
 	text-align: left;
 }
 
+.survey-details__wrapper {
+	width: 80%;
+}
+
 .survey-details__theme {
 	margin-bottom: 30px;
 }

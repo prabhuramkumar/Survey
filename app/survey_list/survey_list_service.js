@@ -1,12 +1,35 @@
-angular.module('surveyList', []).service('surveyListService', ['$http', function($http){
+angular.module('surveyList', []).service('surveyListService', ['$http', '$q', function($http, $q){
+	var surveyList = [];
+	var defer = $q.defer();
 
-    function getSurveyList(url){
+	var state = {error: '',
+				isLoading: true};
+
+    function fetchSurveyList(url){
         return $http.get(url).then(function(data){
-            return data.data;
-        });
+        	angular.copy(data.data.survey_results, surveyList);
+        	defer.resolve(surveyList);
+        }).catch(function(error){
+        	state.error = error;
+        	state.errorMsg = "Data Loading Error."
+        }).finally(function(){
+        	state.isLoading = false;
+        })
     }
 
+    function getSurveyList(url){
+    	if (surveyList.length !== 0) {
+    		defer.resolve(surveyList);
+    	} else {
+    		fetchSurveyList(url);
+    	};
+    	
+    	return defer.promise;
+    }
+
+
     return {
-        getSurveyList: getSurveyList
+    	getSurveyList: getSurveyList,
+    	state: state
     }
 }]);
