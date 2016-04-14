@@ -1,8 +1,8 @@
-# Vanurthi — AngularJS app
+# Survey — AngularJS app
 
 ## Getting Started
 
-To get you started you can simply clone the Vanurthi repository and install the dependencies:
+To get you started you can simply clone the Survey repository and install the dependencies:
 
 
 ```
