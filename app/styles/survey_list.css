@@ -13,6 +13,15 @@ survey-list {
   margin: 20px;
 }
 
+.survey-list button {
+  background-color: #337ab7;
+  color: #ffffff;
+}
+
+.survey-list button:hover {
+  background-color: #326ab7;
+}
+
 .survey-list p {
   margin: 5px;
 }

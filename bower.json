@@ -8,10 +8,6 @@
   "dependencies": {
     "angular": "1.4.x",
     "angular-mocks": "~1.4.x",
-    "bootstrap": "~3.3.6",
     "ui-router": "~0.2.18"
-  },
-  "devDependencies": {
-    "angular-bootstrap": "~0.13.0"
   }
 }
