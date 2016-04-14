@@ -5,10 +5,9 @@ module.exports = function(config){
 
     files : [
       'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'app/survey_details/**/*.js',
       'app/survey_list/**/*.js',
+      'app/survey_details/**/*.js',
       'app/app.js'
     ],
 

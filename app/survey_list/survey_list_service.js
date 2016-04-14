@@ -1,5 +1,6 @@
-angular.module('surveyList', []).service('surveyListService', ['$http', '$q', function($http, $q){
-	var surveyList = [];
+angular.module('surveyList').service('surveyListService', ['$http', '$q', function($http, $q){
+
+    var surveyList = [];
 	var defer = $q.defer();
 
 	var state = {error: '',
@@ -7,7 +8,7 @@ angular.module('surveyList', []).service('surveyListService', ['$http', '$q', fu
 
     function fetchSurveyList(url){
         return $http.get(url).then(function(data){
-        	angular.copy(data.data.survey_results, surveyList);
+            surveyList =  surveyList.concat(data.data.survey_results);
         	defer.resolve(surveyList);
         }).catch(function(error){
         	state.error = error;
@@ -19,17 +20,17 @@ angular.module('surveyList', []).service('surveyListService', ['$http', '$q', fu
 
     function getSurveyList(url){
     	if (surveyList.length !== 0) {
-    		defer.resolve(surveyList);
+    		defer.resolve(self.surveyList);
     	} else {
-    		fetchSurveyList(url);
+    		this.fetchSurveyList(url);
     	};
-    	
     	return defer.promise;
     }
 
 
     return {
     	getSurveyList: getSurveyList,
-    	state: state
+    	state: state,
+        fetchSurveyList: fetchSurveyList
     }
 }]);

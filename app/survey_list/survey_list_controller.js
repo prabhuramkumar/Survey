@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('surveyList')
+angular.module('surveyList', [])
 .controller('SurveyListCtrl', ['surveyListService', '$state', '$rootScope',
 	function(surveyListService, $state, $rootScope) {
 		var controller = this;
