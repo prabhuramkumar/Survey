@@ -13,7 +13,14 @@ npm install
 npm start
 ```
 
+
 Now browse to the app at `http://localhost:8000/`.
+
+```
+npm test
+```
+
+To run the jasmine specs.
 
 
 # Plugins Used
