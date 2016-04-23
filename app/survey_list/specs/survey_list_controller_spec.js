@@ -34,7 +34,7 @@ describe('#surveyListCtrl', function() {
       });
 
 
-      it('should getSurveyList have been called with url', function () {
+      it('should state.go have been called with index + 1', function () {
 
         var index = 1;
         surveyListController.goToSurveyDetails(index);

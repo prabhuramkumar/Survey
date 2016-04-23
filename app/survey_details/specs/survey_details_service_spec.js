@@ -15,8 +15,8 @@ describe('#surveyDetailsService', function() {
 
   	}));
 
-  	describe('on getSurveyList method call', function(){
-      it("should fetchSurveyList is called with url and return surveyList", inject(function (surveyDetailsService){
+  	describe('on getSurveyDetails method call', function(){
+      it("should getSurveyDetails is called with url and return details", inject(function (surveyDetailsService){
         spyOn(http, "get").andReturn(diferred.promise);
         diferred.resolve({"data": "some"});
         
