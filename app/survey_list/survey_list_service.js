@@ -20,7 +20,7 @@ angular.module('surveyList').service('surveyListService', ['$http', '$q', functi
 
     function getSurveyList(url){
     	if (surveyList.length !== 0) {
-    		defer.resolve(self.surveyList);
+    		defer.resolve(surveyList);
     	} else {
     		this.fetchSurveyList(url);
     	};
