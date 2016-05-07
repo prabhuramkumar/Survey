@@ -35,52 +35,10 @@ angular.module('surveyDetails', [])
 
 		controller.addAverageRating = function(questions) {
 			questions.forEach(function(question){
-				question.individual_rating_values = controller.findIndividualRatings(question.survey_responses);
-				question.average_rating = controller.calculateAvgRating(question.individual_rating_values);
+				var ratingModel = new SurveyRatingsModel();
+				question.individual_rating_values = ratingModel.getIndividualRatings(question.survey_responses);
+				question.average_rating = ratingModel.getAvgRating(question.individual_rating_values);
 			})
-		}
-
-		controller.calculateAvgRating = function(individualRatings) {
-			var totalRating = 0,
-				noOfResponses = 0,
-				avgRating = 0;
-			console.log(individualRatings);		
-			individualRatings.forEach(function(ratingValue){
-				totalRating += ratingValue.count * (ratingValue.number);
-				noOfResponses++;
-			});
-			avgRating = totalRating/noOfResponses;
-			return avgRating;
-		}
-
-		controller.findIndividualRatings = function(responses){
-			var ratingModel = {
-				maxRating: 5,
-				ratingStrings: ["ones", "twos", "threes", "fours", "fives"],
-				intialCount: 0			
-			}, ratingValues = [];
-
-			for(var i=0; i<ratingModel.maxRating; i++){
-				ratingValues.push({
-					number: i+1,
-					text: ratingModel.ratingStrings[i],
-					count: ratingModel.intialCount
-				})
-			}
-
-			responses.forEach(function(response){
-				var responseRating = response.response_content;
-				
-				if(responseRating){
-					responseRating = parseInt(responseRating);
-					ratingValues.forEach(function(ratingValue){
-						if(responseRating == ratingValue.number){
-							ratingValue.count++;  
-						}
-					});
-				}
-			});
-			return ratingValues;
 		}
 
 		controller.init();
