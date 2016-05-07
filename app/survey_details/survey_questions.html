@@ -3,5 +3,8 @@
 	<li ng-repeat="question in questions track by $index" class="question">
 		<h3 class="question__title">{{::question.description}}</h3>
 		<p class="question__rating">Average Rating: <span class="question__rating--number">{{::question.average_rating | precision : 2}}<span></p>
+		<ul class="question__numerics">
+			<li ng-repeat="ratingValue in question.individual_rating_values">{{ratingValue.text}}({{ratingValue.count}})</li>
+		</ul>
 	</li>
 </ol>

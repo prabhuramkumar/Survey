@@ -73,3 +73,12 @@
 	color: orange;
 	font-size: 14px;
 }
+
+.question__numerics {
+	display: flex;
+}
+
+.question__numerics li{
+	margin: 5px;
+	color: #cccccc;
+}
